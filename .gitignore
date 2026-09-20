@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.env
+.env.local
+node_modules/
+package-lock.json
+
+# Runtime data
+/tmp/novamofu/
+*.jsonl
+frames/
