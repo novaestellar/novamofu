@@ -14,7 +14,7 @@ triggers:
   - video analysis
   - ai video prompt
 capabilities:
-  - Gemini 2.5 native video understanding (1 API call)
+  - Gemini native video understanding (1 API call)
   - YouTube URL direct analysis
   - Local file upload analysis
   - 4 prompt modes: seedance, sora, runway, generic
@@ -40,7 +40,7 @@ env_vars:
 
 ## 📋 描述
 
-NovaMoFu 是一个统一的视频分析与提示词生成引擎。通过 Gemini 2.5 的原生视频理解能力，一个 API 调用即可完成视频分析和提示词生成。
+NovaMoFu 是一个统一的视频分析与提示词生成引擎。通过 Gemini 的原生视频理解能力，一个 API 调用即可完成视频分析和提示词生成。
 
 **核心理念：** 不是堆砌 "cinematic" "ultra realistic" "8K"，而是回答一个问题——这段素材是谁、用什么设备、在什么年代、出于什么目的拍下来的？
 
@@ -217,8 +217,8 @@ https://youtube.com/watch?v=xxxx
 
 | 引擎 | 16分钟视频 | 免费额度 |
 |------|-----------|----------|
-| Gemini 2.5 Flash | $0.00 | ~1,500 RPD |
-| Gemini 2.5 Pro | ~$0.37 | ~50 RPD |
+| Gemini 3.6 Flash | $0.00 | ~1,500 RPD |
+| Gemini 3.1 Pro | ~$0.37 | ~50 RPD |
 | Fallback (ffmpeg) | $0.00 | 无限 |
 
 ## 🛡️ 安全说明

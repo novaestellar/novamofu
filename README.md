@@ -15,7 +15,7 @@
 
 ## 📋 描述
 
-NovaMoFu 是一个统一的视频分析与提示词生成引擎。通过 Gemini 2.5 的原生视频理解能力,一个 API 调用即可完成视频分析和提示词生成。
+NovaMoFu 是一个统一的视频分析与提示词生成引擎。通过 Gemini 的原生视频理解能力,一个 API 调用即可完成视频分析和提示词生成。
 
 专为 Hermes Agent 平台设计。
 
@@ -120,7 +120,7 @@ novamofu/
 
 ### 1. Gemini 原生视频理解
 
-**核心原理:** Gemini 2.5 Pro/Flash 原生支持视频 + 音频同时输入。一个 API 调用即可获取:
+**核心原理:** Gemini 3.x 原生支持视频 + 音频同时输入。一个 API 调用即可获取:
 - 完整转录(带时间戳)
 - 逐场景分解(视觉 + 音频)
 - 摄像运动分析
@@ -136,8 +136,8 @@ bash engine/analyzer.sh "https://www.youtube.com/watch?v=VIDEO_ID"
 **成本:**
 | 引擎 | 16分钟视频 | 免费额度 |
 |------|-----------|----------|
-| Gemini 2.5 Flash | $0.00 | ~1,500 RPD |
-| Gemini 2.5 Pro | ~$0.37 | ~50 RPD |
+| Gemini 3.6 Flash | $0.00 | ~1,500 RPD |
+| Gemini 3.1 Pro | ~$0.37 | ~50 RPD |
 | Fallback (ffmpeg) | $0.00 | 无限 |
 
 ### 2. 4种提示词模式
