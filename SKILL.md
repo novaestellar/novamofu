@@ -36,7 +36,7 @@ env_vars:
 
 **Video-to-Prompt 生成引擎** — 观看任何视频，生成 AI 视频生成提示词。
 
-专为 Hermes Agent 设计，与 [Novahaku](https://github.com/novaestellar/novahaku) 和 [NovaXinWei](https://github.com/novaestellar/novaxinwei) 协同工作。
+专为 Hermes Agent 平台设计。
 
 ## 📋 描述
 
@@ -220,16 +220,6 @@ https://youtube.com/watch?v=xxxx
 | Gemini 2.5 Flash | $0.00 | ~1,500 RPD |
 | Gemini 2.5 Pro | ~$0.37 | ~50 RPD |
 | Fallback (ffmpeg) | $0.00 | 无限 |
-
-## 🔗 与 Novahaku + NovaXinWei 协同
-
-```
-用户: "看看这个视频并生成 Seedance prompt: https://youtube.com/..."
-     ↓
-1. NovaXinWei → 获取视频元数据、字幕、评论
-2. NovaMoFu → Gemini 分析视频 + 生成提示词
-3. (可选) Novahaku → 如果视频包含安全相关内容，进行分析
-```
 
 ## 🛡️ 安全说明
 

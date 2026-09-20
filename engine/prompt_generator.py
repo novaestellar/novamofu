@@ -141,6 +141,26 @@ def generate_prompt(
     template = TEMPLATES.get(mode, TEMPLATES["generic"])
     sections = parse_gemini_output(analysis)
 
+    # Normalize Gemini output section names to template names
+    name_map = {
+        "画面主体": "主要角色",
+        "镜头语言": "摄像风格",
+        "光影": "视觉风格",
+        "色调风格": "视觉风格",
+        "动态细节": "时间轴",
+        "场景背景": "地点",
+        "构图排版": "视觉风格",
+        "负向提示词": "Negative Prompt",
+    }
+    normalized = {}
+    for key, value in sections.items():
+        new_key = name_map.get(key, key)
+        if new_key in normalized:
+            normalized[new_key] += "\n" + value
+        else:
+            normalized[new_key] = value
+    sections = normalized
+
     output_parts = []
 
     # Header

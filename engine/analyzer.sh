@@ -25,7 +25,7 @@ fi
 
 # Defaults
 ENGINE="${NOVAMOFU_ENGINE:-gemini}"
-MODEL="${NOVAMOFU_GEMINI_MODEL:-gemini-2.5-flash}"
+MODEL="${NOVAMOFU_GEMINI_MODEL:-gemini-3.6-flash}"
 OUTPUT_FORMAT="${NOVAMOFU_OUTPUT_FORMAT:-seedance}"
 
 # Parse args
