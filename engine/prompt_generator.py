@@ -6,10 +6,8 @@ Converts Gemini video analysis output into structured prompts
 for Seedance/Sora/Runway/generic AI video generation models.
 """
 
-import json
 import re
 import sys
-from typing import Optional
 
 
 # ============================================================
@@ -89,8 +87,11 @@ professional lighting, commercial grade, clean画面.
 
 def parse_gemini_output(raw_text: str) -> dict:
     """Parse Gemini analysis output into structured sections."""
+    if not raw_text or not raw_text.strip():
+        return {}
+
     sections = {}
-    current_section = "header"
+    current_section = None
     current_content = []
 
     for line in raw_text.split("\n"):
@@ -99,19 +100,24 @@ def parse_gemini_output(raw_text: str) -> dict:
         bold_match = re.match(r"^\*{2}(.+?)\*{2}\s*$", line)
 
         if header_match or bold_match:
-            # Save previous section
-            if current_content:
-                sections[current_section] = "\n".join(current_content).strip()
+            # Save previous section (only if non-empty content)
+            if current_section is not None and current_content:
+                content = "\n".join(current_content).strip()
+                if content:
+                    sections[current_section] = content
             match_obj = header_match if header_match else bold_match
             assert match_obj is not None
             current_section = match_obj.group(1).strip()
             current_content = []
         else:
-            current_content.append(line)
+            if current_section is not None:
+                current_content.append(line)
 
     # Save last section
-    if current_content:
-        sections[current_section] = "\n".join(current_content).strip()
+    if current_section is not None and current_content:
+        content = "\n".join(current_content).strip()
+        if content:
+            sections[current_section] = content
 
     return sections
 
