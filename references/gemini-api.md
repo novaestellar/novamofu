@@ -5,7 +5,7 @@
 ### URL 视频分析
 
 ```bash
-curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=$GEMINI_API_KEY" \
+curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent?key=$GEMINI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "contents": [{
@@ -31,7 +31,7 @@ curl -s -X POST "https://generativelanguage.googleapis.com/upload/v1beta/files?k
 FILE_URI=$(python3 -c "import json; d=json.load(open('upload_response.json')); print(d['file']['uri'])")
 
 # 3. 分析
-curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=$GEMINI_API_KEY" \
+curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent?key=$GEMINI_API_KEY" \
   -H "Content-Type: application/json" \
   -d "{
     \"contents\": [{
@@ -64,8 +64,8 @@ curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-
 
 | 模型 | 免费额度 | 最大视频长度 | 推荐场景 |
 |------|----------|------------|----------|
-| gemini-2.5-flash | ~1,500 RPD | ~55分钟 | 日常使用(推荐) |
-| gemini-2.5-pro | ~50 RPD | ~55分钟 | 高质量分析 |
+| gemini-3.6-flash | ~1,500 RPD | ~55分钟 | 日常使用(推荐) |
+| gemini-3.1-pro-preview | ~50 RPD | ~55分钟 | 高质量分析 |
 
 ## 响应格式
 
